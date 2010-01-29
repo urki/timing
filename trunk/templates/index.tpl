@@ -1,7 +1,7 @@
 <div>
 <p class="alert">##MESSAGE##</p>
 <p class="text">Vnos tekmovalca</p>
-<form id="form1" name="form1" method="send" action="index.php">
+<form id="form1" name="form1" method="POST" action="index.php">
 <span class="text">
 <label>
 <input type="text" name="full_name" id="full_name" value="##FULL_NAME##"/>
@@ -19,7 +19,7 @@ Mesto<br />
 Štartna št.</label>
 <br />
 <label>##SEX## Spol</label><br />
-<label>##EVENT## Disciplina</label>
+
 <br />
 <input type="submit" name="submit" id="submit" value="prijavi" />
 </span>

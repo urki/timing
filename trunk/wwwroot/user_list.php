@@ -14,8 +14,7 @@ $tem = $tmp[0];
 
 //get out the events//
 $sql = "SELECT * 
-FROM users, 
-events WHERE users.event_id = events.event_id
+FROM users
 ORDER BY users.full_name ASC";
 $db->query($sql);
 while ($db->next_record()) {
