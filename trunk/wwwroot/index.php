@@ -14,16 +14,19 @@ if ($_REQUEST["submit"]!='') {
 	$sex = $_REQUEST["sex"];
 	$event = $_REQUEST["event"];
 	$full_name = trim($_REQUEST["full_name"]);
-	$birthdate = $_REQUEST["birthdate"];
+	$birthday = $_REQUEST["birthday"];
 	$city = $_REQUEST["city"];
 	$number = $_REQUEST["number"];
-
-    ///transform date to timestamp//
+    ///transform date dd.mm.yyyy to yyyy.mm.dd//
     $btime = explode(".",$birthday);
-    $btime = mktime(0, 0, 0, $btime[1], $btime[0], $btime[2]);
-
+    $btime = ($btime[2]."-".$btime[1]."-".$btime[0]); ///transform date to timestamp//
+  
+     //transform date to unixtimestamp//
+     //$btime = explode(".",$birthday);
+     //$btime = mktime(0, 0, 0, $btime[1], $btime[0], $btime[2]);
+ 
 	if ($sex and $event and $full_name and $city and $birthday) {
-
+           
 		//user check//
 		$sql = "select * from users where full_name='$full_name'";
 		$db->query($sql);
@@ -79,6 +82,7 @@ if (!$sucsess)  {
 	$tem = str_replace("##FULL_NAME##",$full_name,$tem);
 	$tem = str_replace("##CITY##",$city,$tem);
 	$tem = str_replace("##NUMBER##",$number,$tem);
+	$tem = str_replace("##BIRTHDAY##",$birthdate,$tem);
 	$tem = str_replace("##CITY##",$city,$tem);
 }
 $tem = str_replace("##MESSAGE##",$message,$tem);
