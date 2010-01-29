@@ -13,6 +13,7 @@ function create_results($res,$title) {
 		$rtable =str_replace("##FULL_NAME##",$res->f("full_name"),$rtable);
 		$rtable =str_replace("##PLACE##",$x,$rtable);
 		$rtable =str_replace("##TIME##",$res->f("end_time"),$rtable);
+		$x++;
 		}
 	$table = str_replace("##RESULTS##",$rtable,$table);
 	$rtable = '';
