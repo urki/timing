@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 28, 2010 at 09:33 PM
+-- Generation Time: Jan 29, 2010 at 08:59 PM
 -- Server version: 5.1.37
 -- PHP Version: 5.2.11
 
@@ -35,7 +35,7 @@ CREATE TABLE `tekma` (
   `tekma_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`tekma_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 -- --------------------------------------------------------
 
@@ -52,7 +52,7 @@ CREATE TABLE `timming` (
   `tekma_id` int(11) NOT NULL,
   PRIMARY KEY (`time_id`),
   KEY `user_id` (`user_id`,`start`,`stop`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 -- --------------------------------------------------------
 
@@ -63,7 +63,7 @@ CREATE TABLE `timming` (
 CREATE TABLE `users` (
   `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `full_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_slovenian_ci NOT NULL,
-  `birthdate` int(11) NOT NULL,
+  `birthdate` date NOT NULL,
   `sex` varchar(1) NOT NULL,
   `city` varchar(255) CHARACTER SET utf8 COLLATE utf8_slovenian_ci NOT NULL,
   `event_id` int(11) NOT NULL,
@@ -71,4 +71,4 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id_user`),
   KEY `birthdate` (`birthdate`,`sex`,`city`),
   KEY `event_id` (`event_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
