@@ -3,7 +3,15 @@
    ##START##
      <tr>
       <td>##NAME##</td>
-      <td><a href="event.php?event_id=##EVENT_ID##">zacni</a></td>
+      <td><a href="event.php?event_id=##EVENT_ID##">zacni</a>
+
+		<form action="run.php" method="GET">
+		##TEKMA_DROP##
+		<input type="hidden" name="event_id" value="##EVENT_ID##">
+		<input type="submit" name="casi" value="casi">
+		</form>
+
+		</td>
       <td><form action="results.php" method="POST">
 		##TEKMA_DROP##
 		<input type="hidden" name="event_id" value="##EVENT_ID##">
