@@ -18,9 +18,15 @@ Mesto<br />
 <input name="number" type="text" id="number" size="3"  value="##NUMBER##" />
 Štartna št.</label>
 <br />
+
+<label>
+<input name="club" type="text" id="club"  value="##CLUB##" />Klub</label><br />
+
 <label>##SEX## Spol</label><br />
 
+<label>##EVENT## Disciplina</label><br />
 <br />
+
 <input type="submit" name="submit" id="submit" value="prijavi" />
 </span>
 </form>

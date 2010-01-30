@@ -17,12 +17,13 @@ if ($_REQUEST["submit"]!='') {
 	$birthday = $_REQUEST["birthday"];
 	$city = $_REQUEST["city"];
 	$number = $_REQUEST["number"];
-	if (strlen($birthday)!=10) $birthday ='';
+        $club=$_REQUEST["club"];
+	//za nulo pri datumu if (strlen($birthday)!=10) $birthday ='';
 	
     ///transform date to timestamp//
     if ($birthday) {
 		$btime = explode(".",$birthday);
-    	$btime = $btime[2]."-".$btime[1]."-".$btime[0];
+    	$btime = ($btime[2]."-".$btime[1]."-".$btime[0]);
 	}
 	if ($sex  and $full_name and $city and $btime ) {
 
@@ -39,11 +40,13 @@ if ($_REQUEST["submit"]!='') {
 				`birthdate` ,
 				`sex` ,
 				`city` ,
+                                `club`,
 				`event_id` ,
 				`number`
+                                
 			)
 		VALUES (
-		NULL ,  '$full_name',  '$btime',  '$sex',  '$city',  '$event',  '$number')";
+		NULL ,  '$full_name',  '$btime',  '$sex',  '$city','$club',  '$event',  '$number')";
 		$db->query($sql);
 		$message = "Vnos uspesen";
 		$success = "true";
@@ -78,6 +81,7 @@ $event_dd = html_drop_down_arrays('event',$e_names,$e_values,$event);
 $tem = str_replace("##SEX##",$sex_dd,$tem);
 $tem = str_replace("##EVENT##",$event_dd,$tem);
 if (!$sucsess)  {
+        $tem = str_replace("##CLUB##",$club,$tem);
 	$tem = str_replace("##FULL_NAME##",$full_name,$tem);
 	$tem = str_replace("##CITY##",$city,$tem);
 	$tem = str_replace("##NUMBER##",$number,$tem);

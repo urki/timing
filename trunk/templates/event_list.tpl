@@ -3,8 +3,9 @@
    ##START##
      <tr>
       <td>##NAME##</td>
-      <td><a href="event.php?event_id=##EVENT_ID##">zacni</a>
-
+      <td><a href="event.php?event_id=##EVENT_ID##">začni</a>
+               </td>
+               <td>
 		<form action="run.php" method="GET">
 		##TEKMA_DROP##
 		<input type="hidden" name="event_id" value="##EVENT_ID##">
