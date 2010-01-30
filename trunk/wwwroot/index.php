@@ -25,14 +25,16 @@ if ($_REQUEST["submit"]!='') {
 		$btime = explode(".",$birthday);
     	$btime = ($btime[2]."-".$btime[1]."-".$btime[0]);
 	}
-	if ($sex  and $full_name and $city and $btime ) {
+	if ($sex  and $full_name and $city and $btime and event_id ) {
 
 		//user check//
-		$sql = "select * from users where full_name='$full_name'";
-		$db->query($sql);
-		if ($db->affected_rows()>0) {
-			$message = "Uporabnik ze obstaja";
-		} else {
+		//$sql = "select * from users where full_name='$full_name'";
+		//$db->query($sql);
+		//if ($db->affected_rows()>0) {
+		//	$message = "Uporabnik ze obstaja";
+		//} else
+                    {
+
 
 		$sql = "INSERT INTO  `timming`.`users` (
 				`id_user` ,
