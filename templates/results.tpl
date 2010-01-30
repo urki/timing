@@ -4,9 +4,9 @@
   <h1>##TITLE##</h1>
   <table width="100%" border="0">
     <tr>
-      <td width="6%">Uvrstitev</td>
-      <td width="16%">Ime Priimek</td>
-      <td width="78%">Cas</td>
+      <td width="6%"><b>mesto</b></td>
+      <td width="16%"><b>Ime in Priimek</b></td>
+      <td width="78%"><b>Čas</b></td>
     </tr>
     ##START_EN##<tr>
       <td>##PLACE##</td>

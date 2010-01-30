@@ -60,20 +60,24 @@ if ($tekma and $event_id) {
 	$tekma_name = $db->f("tname");
 	
 	//Pogledamo rezultate za Moske pod 40 let//
-	$res = get_results("M","35","<");
-	if ($res->affected_rows()>0) 
-		create_results($res,"JEbeni naslov".$event_name." - ".$tekma_name);
+        $age="31 and 40";
+	$res = get_results("M",$age,"between");
+	if ($res->affected_rows()>0) {
+                $titleAge=explode(" ",$age);
+                create_results($res,$event_name." - ".$tekma_name." - Moški od ".$titleAge[0]." do ".$titleAge[2]." let");
+                $age=0;
+               }
+	        
+	//Pogledamo rezultate za Moske ned 21 in 30 let//
+        $age="21 and 30";
+	$res = get_results("M",$age,"between");
+	if ($res->affected_rows()>0) {
+                $titleAge=explode(" ",$age);
+                create_results($res,$event_name." - ".$tekma_name." - Moški od ".$titleAge[0]." do ".$titleAge[2]." let");
+                $age=0;
+               }
 	
 	
-	
-	////
-	$res = get_results("M","35","<");
-	if ($res->affected_rows()>0) 
-		create_results($res,"JEbensf33i naslov");
-	//////
-	$res = get_results("F","38","<");
-	if ($res->affected_rows()>0) 
-		create_results($res,"JEbeni ass naslov");
 
 
 
