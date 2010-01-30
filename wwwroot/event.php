@@ -25,7 +25,8 @@ $title = $db->f("name");
 ///User_drop_down//
 $sql = "SELECT * 
 FROM users
-ORDER BY users.full_name ASC";
+WHERE event_id=$event_id
+ORDER BY users.number ASC";
 $db->query($sql);
 while ($db->next_record()) {
 	
