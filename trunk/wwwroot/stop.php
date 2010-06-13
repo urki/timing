@@ -12,7 +12,7 @@ $db = new DB_Sql();
 
 if ($user_id and $tekma_id and $event_id ) {
 	
-	$sql = "update timming set stop =".time()." where user_id='$user_id' and tekma_id='$tekma_id' and event_id='$event_id' and stop=0";
+	$sql = "update timming set stop =".microtime_float()." where user_id='$user_id' and tekma_id='$tekma_id' and event_id='$event_id' and stop=0";
 	$db->query($sql);
 
 	//echo $sql;

@@ -9,10 +9,18 @@ function create_results($res,$title) {
 	$table = str_replace("##TITLE##",$title,$table);
 	$x=1;
 	while($res->next_record()) {
+		$smicro = $res->f("start");
+		$stmicro = $res->f("stop");
+		$smicro = explode(".",$smicro);
+		$stmicro = explode(".",$stmicro);
+		$micro = (ABS($stmicro[1]-$smicro[1]));
+		if ($micro<1000) $micro = "0".$micro;
+		if ($micro<100) $micro = "0".$micro;
 		$rtable.=$row;
 		$rtable =str_replace("##FULL_NAME##",$res->f("full_name"),$rtable);
 		$rtable =str_replace("##PLACE##",$x,$rtable);
 		$rtable =str_replace("##TIME##",$res->f("end_time"),$rtable);
+		$rtable =str_replace("##TIME2##",substr($micro,0,2),$rtable);
 		$x++;
 		}
 	$table = str_replace("##RESULTS##",$rtable,$table);

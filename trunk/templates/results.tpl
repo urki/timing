@@ -11,7 +11,7 @@
     ##START_EN##<tr>
       <td>##PLACE##</td>
       <td>##FULL_NAME##</td>
-      <td>##TIME##</td>
+      <td>##TIME##,##TIME2##</td>
     </tr>
 	##STOP_EN##
  </table>
