@@ -10,7 +10,7 @@ $users = $_REQUEST["users"];
 $db = new DB_Sql();
 
 if ($users and $tekma_id and $event_id ) {
-	
+	$start = microtime_float();
 	foreach($users as $user_id) { 
 	/// then we start the timing//
 	$sql = "INSERT INTO  `timming`.`timming` (
@@ -22,7 +22,7 @@ if ($users and $tekma_id and $event_id ) {
 	`tekma_id`
 	)
 	VALUES (
-	NULL ,  '$user_id',  ".time().",  '',  '$event_id',  '$tekma_id')";
+	NULL ,  '$user_id',  ".$start.",  '',  '$event_id',  '$tekma_id')";
 	$db->query($sql);
 	}
 	
