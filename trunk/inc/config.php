@@ -12,14 +12,14 @@ $cHOST     = "127.0.0.1";
 $cDATABASE = "timming";
 $cUSER     = "root";
 $cPASSWORD = "uR34Ga87";
-$cPASSWORD = 'vili123';
+//$cPASSWORD = 'vili123';
 
 
 
 //$BASE_DIR="/srv/www/htdoc/intranet";
 //$BASE_DIR="D:\uros\Programiranje\intranet";
-$BASE_DIR="/Users/samek/Sites/timing/";
-//$BASE_DIR="/var/www/timing";
+//$BASE_DIR="/Users/samek/Sites/timing/";
+$BASE_DIR="/var/www/timing";
 
 $TEMPLATE_DIR=$BASE_DIR."/templates/";
 

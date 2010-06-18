@@ -1,6 +1,7 @@
 <?
 include "../inc/config.php";
 
+
 //create db object//
 $db = new DB_Sql();
 //open template//
@@ -52,6 +53,7 @@ if ($_REQUEST["submit"]!='') {
 		$db->query($sql);
 		$message = "Vnos uspesen";
 		$success = "true";
+                 header( "refresh:1;url=index.php" );
 	}
     } else {
 	$message = "Manjkajoca polja!";
