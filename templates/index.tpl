@@ -1,3 +1,5 @@
+
+
 <div>
 <p class="alert">##MESSAGE##</p>
 <p class="text">Vnos tekmovalca</p>
