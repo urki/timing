@@ -5,7 +5,7 @@
                                   | <a href="tekma_add.php">Vnos tekem</a>
                                   | <a href="event_list.php">pregled disciplin</a>
 								  | <a href="user_group_list.php">pregled prijavljenih - print</a>
-								  | <a href="user_group_list.php">pregled prijavljenih discipline - print</a>
+								  | <a href="user_group_list_event.php">pregled prijavljenih discipline - print</a>
 									</span> </div>
 
 </body>
