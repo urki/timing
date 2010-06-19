@@ -6,13 +6,13 @@ include "../inc/config.php";
 //$event_id = $_REQUEST["event_id"];
 //$tekma_id = $_REQUEST["tekma_id"];
 $user_id = $_REQUEST["user_id"];
-
+echo "userID=".$user_id;
 //create db object//
 $db = new DB_Sql();
 
 if ($user_id) {
 	
-	$sql = "delete * where user_id='$user_id'";
+	$sql = "delete * from users where user_id='$user_id'";
 	$db->query($sql);
 
 	//echo $sql;
@@ -20,6 +20,7 @@ if ($user_id) {
 	header("location:".$_SERVER['HTTP_REFERER']);
 	exit();
 }
+
 echo "Ups??";
 
 
