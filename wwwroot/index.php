@@ -23,9 +23,8 @@ if ($_REQUEST["submit"]!='') {
 	
     ///transform date to timestamp//
     if ($birthday) {
-		$btime = explode(".",$birthday);
 
-    	$btime = ($btime[2]."-".$btime[1]."-".$btime[0]);
+    	$btime = ($birthday."-"."1"."-1");
 	}
 	if ($sex  and $full_name and $city and $btime and event_id ) {
               
@@ -77,7 +76,7 @@ while ($db->next_record()) {
 }
 
 $event_dd = html_drop_down_arrays('event',$e_names,$e_values,$event);
-
+$bday = html_drop_down_number('birthday',1900,2008,$selected);
 
 
 
@@ -85,6 +84,7 @@ $event_dd = html_drop_down_arrays('event',$e_names,$e_values,$event);
 //replace template variables//
 $tem = str_replace("##SEX##",$sex_dd,$tem);
 $tem = str_replace("##EVENT##",$event_dd,$tem);
+$tem = str_replace("##BIRTHDAY##",$bday,$tem);
 if (!$sucsess)  {
         $tem = str_replace("##CLUB##",$club,$tem);
 	$tem = str_replace("##FULL_NAME##",$full_name,$tem);
