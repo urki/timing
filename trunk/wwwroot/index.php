@@ -7,7 +7,7 @@ $db = new DB_Sql();
 //open template//
 $tem = template_open("index.tpl");
 //add header footer//
-$tem = template_add_head_foot($tem,head,foot);
+$tem = template_add_head_foot($tem,head,NoFoot);
 
 
 if ($_REQUEST["submit"]!='') {
@@ -24,10 +24,11 @@ if ($_REQUEST["submit"]!='') {
     ///transform date to timestamp//
     if ($birthday) {
 		$btime = explode(".",$birthday);
+
     	$btime = ($btime[2]."-".$btime[1]."-".$btime[0]);
 	}
 	if ($sex  and $full_name and $city and $btime and event_id ) {
-
+              
 		//user check//
 		//$sql = "select * from users where full_name='$full_name'";
 		//$db->query($sql);
@@ -56,12 +57,12 @@ if ($_REQUEST["submit"]!='') {
                  header( "refresh:1;url=index.php" );
 	}
     } else {
-	$message = "Manjkajoca polja!";
+	$message = "Manjkajo&#269;ca polja!";
 	}
 }
 
-$names[] = "Moski";
-$names[] = "Zenska";
+$names[] = "Mo&#353;ki";
+$names[] = "&#142;enska";
 $values[] = "M";
 $values[] = "F";
 

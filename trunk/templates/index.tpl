@@ -16,10 +16,11 @@ Roj. dan (dd.mm.yyyy)</label>
 <label>
 <input type="text" name="city" id="city" value="##CITY##" />
 Mesto<br />
-<label>
-<input name="number" type="text" id="number" size="3"  value="##NUMBER##" />
-Štartna št.</label>
-<br />
+<!--<label>
+//<input name="number" type="text" id="number" size="3"  value="##NUMBER##" />
+//Štartna št.</label>
+//<br />
+--!>
 
 <label>
 <input name="club" type="text" id="club"  value="##CLUB##" />Klub</label><br />
