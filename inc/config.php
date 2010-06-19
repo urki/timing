@@ -38,6 +38,35 @@ function get_results($sex,$age,$compare) {
 
 	return $db;
 }
+function get_user_group($sex,$age,$compare) {
+	global $tekma,$event_id;
+	
+	$db = new DB_sql();
+	
+	$sql = "SELECT full_name,birthdate,sex,number
+	FROM   users,events
+	WHERE  
+	(timestampdiff(YEAR,birthdate,now()) $compare $age) and sex='$sex'
+   order by users.full_name ASC";
+	$db->query($sql);
+
+	return $db;
+}
+
+function get_user_group_event($sex,$age,$compare) {
+	global $tekma,$event_id;
+	
+	$db = new DB_sql();
+	
+	$sql = "SELECT full_name,birthdate,sex,number, name
+	FROM   users,events
+	WHERE  
+	(timestampdiff(YEAR,birthdate,now()) $compare $age) and sex='$sex' and events.event_id=$event_id
+   order by users.full_name ASC";
+	$db->query($sql);
+
+	return $db;
+}
 
 function microtime_float()
 {
