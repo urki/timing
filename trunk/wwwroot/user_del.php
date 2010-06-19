@@ -12,7 +12,7 @@ $db = new DB_Sql();
 
 if ($user_id) {
 	
-	$sql = "delete * from users where user_id='$user_id'";
+	$sql = "delete  from users where id_user='$user_id'";
 	$db->query($sql);
 
 	//echo $sql;

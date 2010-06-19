@@ -27,7 +27,7 @@ if ($users and $tekma_id and $event_id ) {
 	}
 	
 	//redirekt to monitor page//
-	header("location:run.php?event_id=".$event_id."&tekma=".$tekma_id);
+	header("location:stop_combo.php?event_id=".$event_id."&tekma=".$tekma_id);
 	exit();
 }
 echo "Ups??";
