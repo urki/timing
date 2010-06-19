@@ -224,14 +224,14 @@ function html_drop_down_number($name,$low,$high,$selected) {
 //@return html code for dropdown
 //@globs   none
 
-function html_drop_down_arrays($drop_name,$names,$values,$selected) {
+function html_drop_down_arrays($drop_name,$names,$values,$selected = FALSE ,$extra = FALSE ) {
 	$a=count($names);
 	$b=count($values);
 	if ($a!=$b) {
 		$out="Wrong usage!";
 		return $out;
     }
-    $out="<select name=\"$drop_name\">";
+    $out="<select id=\"$id\" name=\"$drop_name\" $extra>";
 	for ($x=0;$x<$a;$x++) {
         if (trim($names[$x])=="") {
             continue;
