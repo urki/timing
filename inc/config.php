@@ -44,7 +44,7 @@ function get_user_group($sex,$age,$compare) {
 	$db = new DB_sql();
 	
 	$sql = "SELECT full_name,birthdate,sex,number
-	FROM   users,events
+	FROM   users
 	WHERE  
 	(timestampdiff(YEAR,birthdate,now()) $compare $age) and sex='$sex'
    order by users.full_name ASC";
@@ -54,6 +54,7 @@ function get_user_group($sex,$age,$compare) {
 }
 
 function get_user_group_event($sex,$age,$compare) {
+
 	global $tekma,$event_id;
 	
 	$db = new DB_sql();
@@ -61,8 +62,9 @@ function get_user_group_event($sex,$age,$compare) {
 	$sql = "SELECT full_name,birthdate,sex,number, name
 	FROM   users,events
 	WHERE  
-	(timestampdiff(YEAR,birthdate,now()) $compare $age) and sex='$sex' and events.event_id=$event_id
+	(timestampdiff(YEAR,birthdate,now()) $compare $age) and sex='$sex' and users.event_id=events.event_id and events.event_id=$event_id
    order by users.full_name ASC";
+
 	$db->query($sql);
 
 	return $db;
