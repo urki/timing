@@ -43,6 +43,30 @@
 }
 -->
 </style>
+<SCRIPT TYPE="text/javascript">
+window.onload=function(){
+ document.form5.user_id.focus();
+}
+<!--
+function submitenter(myfield,e)
+{
+var keycode;
+if (window.event) keycode = window.event.keyCode;
+else if (e) keycode = e.which;
+else return true;
+
+if (keycode == 13)
+   {
+   	document.form5.submit()
+
+   return false;
+   }
+else
+   return true;
+}
+//-->
+</SCRIPT>
+
 </head>
 
 <body>
