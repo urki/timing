@@ -10,8 +10,8 @@
 Ime in priimek</label>
 <br />
 <label>
-<input type="text" name="birthday" id="birthday" value="##BIRTHDAY##" />
-Roj. dan (dd.mm.yyyy)</label>
+##BIRTHDAY## - Letnica rojstva
+
 <br />
 <label>
 <input type="text" name="city" id="city" value="##CITY##" />
