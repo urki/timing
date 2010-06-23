@@ -12,14 +12,14 @@ $cHOST     = "127.0.0.1";
 $cDATABASE = "timming";
 $cUSER     = "root";
 $cPASSWORD = "uR34Ga87";
-$cPASSWORD = 'vili123';
+//$cPASSWORD = 'vili123';
 
 
 
 //$BASE_DIR="/srv/www/htdoc/intranet";
 //$BASE_DIR="D:\uros\Programiranje\intranet";
-$BASE_DIR="/Users/samek/Sites/timing/";
-//$BASE_DIR="/var/www/timing";
+//$BASE_DIR="/Users/samek/Sites/timing/";
+$BASE_DIR="/var/www/timing";
 
 $TEMPLATE_DIR=$BASE_DIR."/templates/";
 
@@ -29,7 +29,7 @@ function get_results($sex,$age,$compare) {
 	
 	$db = new DB_sql();
 	
-	$sql = "SELECT start,stop,full_name,birthdate,sex,number,sec_to_time((stop-start)) as end_time,start,stop
+	$sql = "SELECT start,stop,full_name,birthdate,sex,number,sec_to_time((stop-start)) as end_time,start,stop, city, club
 	FROM  `timming` , users
 	WHERE  `timming`.user_id = users.id_user and timming.user_id and 
 	(timestampdiff(YEAR,birthdate,now()) $compare $age) and sex='$sex'
