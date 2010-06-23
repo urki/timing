@@ -18,6 +18,7 @@ function create_results($res,$title) {
 		if ($micro<100) $micro = "0".$micro;
 		$rtable.=$row;
 		$rtable =str_replace("##FULL_NAME##",$res->f("full_name"),$rtable);
+                $rtable =str_replace("##CLUB##",$res->f("club"),$rtable);
 		$rtable =str_replace("##PLACE##",$x,$rtable);
 		$rtable =str_replace("##TIME##",$res->f("end_time"),$rtable);
 		$rtable =str_replace("##TIME2##",substr($micro,0,2),$rtable);
@@ -67,72 +68,227 @@ if ($tekma and $event_id) {
 	$event_name = $db->f("ename");
 	$tekma_name = $db->f("tname");
 	
-	//Pogledamo rezultate za Mladino do 19let//
-        $age="19";
+	//Pogledamo rezultate za Mladino do 7 let//
+        $age="7";
 	$res = get_results("M",$age,"<=");
 	if ($res->affected_rows()>0) {
                 $titleAge=explode(" ",$age);
-                create_results($res,$event_name." - ".$tekma_name." - mladina M do ".$titleAge[0]." let");
+                create_results($res,$event_name."- mladina M do ".$titleAge[0]." let");
                 $age=0;
                }
 
-        //Pogledamo rezultate za Moske pod 40 let//
-        $age="20 and 40";
+    //Pogledamo rezultate za Moske pod 40 let//
+        $age="8 and 9";
 	$res = get_results("M",$age,"between");
 	if ($res->affected_rows()>0) {
                 $titleAge=explode(" ",$age);
-                create_results($res,$event_name." - ".$tekma_name." - M do ".$titleAge[2]." let");
+                create_results($res,$event_name." - mladina M od ".$titleAge[0]." do ".$titleAge[2]." let"); //.$titleAge[0].
+                $age=0;
+               }
+
+
+                   //Pogledamo rezultate za Moske pod 40 let//
+        $age="10 and 11";
+	$res = get_results("M",$age,"between");
+	if ($res->affected_rows()>0) {
+                $titleAge=explode(" ",$age);
+                create_results($res,$event_name."- mladina M od ".$titleAge[0]." do ".$titleAge[2]." let");
+                $age=0;
+               }
+
+
+                   //Pogledamo rezultate za Moske pod 40 let//
+        $age="12 and 13";
+	$res = get_results("M",$age,"between");
+	if ($res->affected_rows()>0) {
+                $titleAge=explode(" ",$age);
+                create_results($res,$event_name." - mladina M od ".$titleAge[0]." do ".$titleAge[2]." let");
+                $age=0;
+               }
+
+                   //Pogledamo rezultate za Moske pod 40 let//
+        $age="14 and 15";
+	$res = get_results("M",$age,"between");
+	if ($res->affected_rows()>0) {
+                $titleAge=explode(" ",$age);
+                create_results($res,$event_name."- mladina M od ".$titleAge[0]." do ".$titleAge[2]." let");
+                $age=0;
+               }
+                //Pogledamo rezultate za Moske pod 40 let//
+        $age="16 and 19";
+	$res = get_results("M",$age,"between");
+	if ($res->affected_rows()>0) {
+                $titleAge=explode(" ",$age);
+                create_results($res,$event_name."- M - kategorija A od ".$titleAge[0]." do ".$titleAge[2]." let");
+                $age=0;
+               }
+        //Pogledamo rezultate za Moske pod 40 let//
+        $age="20 and 29";
+	$res = get_results("M",$age,"between");
+	if ($res->affected_rows()>0) {
+                $titleAge=explode(" ",$age);
+                create_results($res,$event_name."- M - kategorija B od ".$titleAge[0]." do ".$titleAge[2]." let");
                 $age=0;
                }
 	        
 	//Pogledamo rezultate za veterane do 50 let//
-        $age="41 and 50";
+        $age="30 and 39";
 	$res = get_results("M",$age,"between");
 	if ($res->affected_rows()>0) {
                 $titleAge=explode(" ",$age);
-                create_results($res,$event_name." - ".$tekma_name." - M veterani do ".$titleAge[2]." let");
+                create_results($res,$event_name."- M - kategorija C od ".$titleAge[0]." do ".$titleAge[2]." let");
                 $age=0;
                }
-	
 
+
+
+               //Pogledamo rezultate za veterane do 50 let//
+        $age="40 and 49";
+	$res = get_results("M",$age,"between");
+	if ($res->affected_rows()>0) {
+                $titleAge=explode(" ",$age);
+                create_results($res,$event_name."- M - kategorija D od ".$titleAge[0]." do ".$titleAge[2]." let");
+                $age=0;
+               }
+
+
+
+               //Pogledamo rezultate za veterane do 50 let//
+        $age="50 and 59";
+	$res = get_results("M",$age,"between");
+	if ($res->affected_rows()>0) {
+                $titleAge=explode(" ",$age);
+                create_results($res,$event_name."- M - kategorija E od ".$titleAge[0]." do ".$titleAge[2]." let");
+                $age=0;
+               }
+
+
+                              //Pogledamo rezultate za veterane do 50 let//
+        $age="60 and 69";
+	$res = get_results("M",$age,"between");
+	if ($res->affected_rows()>0) {
+                $titleAge=explode(" ",$age);
+                create_results($res,$event_name."- M - kategorija F od ".$titleAge[0]." do ".$titleAge[2]." let");
+                $age=0;
+               }
+
+
+                              //Pogledamo rezultate za vetera
                //Pogledamo rezultate za veterane nad 50 let//
-        $age="50";
+        $age="70";
 	$res = get_results("M",$age,">");
 	if ($res->affected_rows()>0) {
                 $titleAge=explode(" ",$age);
-                create_results($res,$event_name." - ".$tekma_name." - M veterani do ".$titleAge[2]." let");
+                create_results($res,$event_name."- M - kategorija G od ".$titleAge[0]." let -->");
                 $age=0;
                }
 
 
 
 //Pogledamo rezultate za Mladino Ž do 19let//
-        $age="19";
+
+
+        $age="7";
 	$res = get_results("F",$age,"<=");
 	if ($res->affected_rows()>0) {
                 $titleAge=explode(" ",$age);
-                create_results($res,$event_name." - ".$tekma_name." - mladina Ž do ".$titleAge[0]." let");
+                create_results($res,$event_name."- mladina Ž do ".$titleAge[0]." let");
                 $age=0;
                }
 
-        //Pogledamo rezultate za Ženskepod 40 let//
-        $age="20 and 40";
+               //Pogledamo rezultate za Ženskepod 40 let//
+        $age="8 and 9";
 	$res = get_results("F",$age,"between");
 	if ($res->affected_rows()>0) {
                 $titleAge=explode(" ",$age);
-                create_results($res,$event_name." - ".$tekma_name." - Ž do ".$titleAge[2]." let");
+                create_results($res,$event_name." - mladina Ž od ".$titleAge[0]." do ".$titleAge[2]." let");
+                $age=0;
+               }
+
+               //Pogledamo rezultate za Ženskepod 40 let//
+        $age="10 and 11";
+	$res = get_results("F",$age,"between");
+	if ($res->affected_rows()>0) {
+                $titleAge=explode(" ",$age);
+                create_results($res,$event_name." - mladina Ž od ".$titleAge[0]." do ".$titleAge[2]." let");
                 $age=0;
                }
 
 
-        //Pogledamo rezultate za Ženske nad 41 let//
-        $age="40";
+               //Pogledamo rezultate za Ženskepod 40 let//
+        $age="12 and 13";
+	$res = get_results("F",$age,"between");
+	if ($res->affected_rows()>0) {
+                $titleAge=explode(" ",$age);
+                create_results($res,$event_name." - mladina Ž od ".$titleAge[0]." do ".$titleAge[2]." let");
+                $age=0;
+               }
+
+               //Pogledamo rezultate za Ženskepod 40 let//
+        $age="14 and 15";
+	$res = get_results("F",$age,"between");
+	if ($res->affected_rows()>0) {
+                $titleAge=explode(" ",$age);
+                create_results($res,$event_name." - mladina Ž od ".$titleAge[0]." do ".$titleAge[2]." let");
+                $age=0;
+               }
+        //Pogledamo rezultate za Ženskepod 40 let//
+        $age="16 and 29";
+	$res = get_results("F",$age,"between");
+	if ($res->affected_rows()>0) {
+                $titleAge=explode(" ",$age);
+                create_results($res,$event_name."- Ž - kategorija A od ".$titleAge[0]." do ".$titleAge[2]." let");
+                $age=0;
+               }
+
+     //Pogledamo rezultate za Ženskepod 40 let//
+        $age="30 and 39";
+	$res = get_results("F",$age,"between");
+	if ($res->affected_rows()>0) {
+                $titleAge=explode(" ",$age);
+                create_results($res,$event_name."- Ž - kategorija B od ".$titleAge[0]." do ".$titleAge[2]." let");
+                $age=0;
+               }
+
+               //Pogledamo rezultate za Ženskepod 40 let//
+        $age="40 and 49";
+	$res = get_results("F",$age,"between");
+	if ($res->affected_rows()>0) {
+                $titleAge=explode(" ",$age);
+                create_results($res,$event_name."- Ž - kategorija C od ".$titleAge[0]." do ".$titleAge[2]." let");
+                $age=0;
+               }
+
+
+                              //Pogledamo rezultate za Ženskepod 40 let//
+        $age="50 and 59";
+	$res = get_results("F",$age,"between");
+	if ($res->affected_rows()>0) {
+                $titleAge=explode(" ",$age);
+                create_results($res,$event_name."- Ž - kategorija D od ".$titleAge[0]." do ".$titleAge[2]." let");
+                $age=0;
+               }
+
+                                    //Pogledamo rezultate za vetera
+               //Pogledamo rezultate za veterane nad 50 let//
+        $age="60";
 	$res = get_results("F",$age,">");
 	if ($res->affected_rows()>0) {
                 $titleAge=explode(" ",$age);
-                create_results($res,$event_name." - ".$tekma_name." - Ž veterani do ".$titleAge[2]." let");
+                create_results($res,$event_name."- Ž - kategorija E od ".$titleAge[0]." let -->");
                 $age=0;
                }
+
+
+
+        //Pogledamo rezultate za Ženske nad 41 let//
+       // $age="290";
+	//$res = get_results("F",$age,">");
+	//if ($res->affected_rows()>0) {
+          //      $titleAge=explode(" ",$age);
+            //    create_results($res,$event_name." - ".$tekma_name." - Ž veterani do ".$titleAge[2]." let");
+            //    $age=0;
+             //  }
 	/*//Pogledamo rezultate za veterane Ž do 50 let//
         $age="41 and 50";
 	$res = get_results("F",$age,"between");
@@ -151,6 +307,17 @@ if ($tekma and $event_id) {
                 create_results($res,$event_name." - ".$tekma_name." - Ž veterani do ".$titleAge[2]." let");
                 $age=0;
                }
+
+         *
+         *  //Pogledamo rezultate za Moske pod 40 let//
+        $age="8 and 9";
+	$res = get_results("M",$age,"between");
+	if ($res->affected_rows()>0) {
+                $titleAge=explode(" ",$age);
+                create_results($res,$event_name." - ".$tekma_name." - M kategorija A"); //.$titleAge[0].
+                $age=0;
+               }
+
        */
 }
 
